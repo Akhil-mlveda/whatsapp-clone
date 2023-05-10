@@ -30,6 +30,9 @@
 
 
 
+
+//////////////////////////////////////////////////////////////////// NEWW
+
 // import firebase from "firebase";
 // import firebase from "firebase/compat/app";
 // import "firebase/compat/auth";
@@ -38,7 +41,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore'
 // import { getFirestore, } from 'firebase/firestore/lite';
 // import { getDatabase } from "firebase/database";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, GoogleAuthProvider} from "firebase/auth";
 import "firebase/auth";
 // import "firebase/compat/auth";
 // import "firebase/compat/firestore";

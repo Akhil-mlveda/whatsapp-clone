@@ -29,11 +29,11 @@
 
 .chat__body {
     flex: 1;
-    /* background-image: url('#'); */
-    /* background-repeat: repeat; */
-    /* background-position: center; */
+    background-image: url('../Image/whatsapp_background_image.png');
+    background-repeat: repeat;
+    background-position: center;
     padding: 30px;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .chat__message {

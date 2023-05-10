@@ -9,6 +9,8 @@ import SidebarChat from "./SidebarChat";
 import { collection } from "firebase/firestore";
 import db from "../firebase";
 import { query, onSnapshot } from "firebase/firestore";
+import { useStateValue } from "../StateProvider";
+
 
 // import ChatIcon from "@material-ui/icons/ChatIcon";
 // import MoreVertIcon from "@material-ui/icons/MoreVertIcon";
@@ -18,9 +20,9 @@ import { query, onSnapshot } from "firebase/firestore";
 function Sidebar() {
   // fetching the data from firebase database
   const [rooms, setRooms] = useState([]);
+  const [{user}, dispatch] = useStateValue();
 
   useEffect(() => {
-
     // const q = query(collection(db, "cities"), where("state", "==", "CA"));
     // const unsubscribe = onSnapshot(q, (querySnapshot) => {
     //   const cities = [];
@@ -30,7 +32,7 @@ function Sidebar() {
     //   console.log("Current cities in CA: ", cities.join(", "));
     // });
 
-    const q = query(collection(db, "rooms"))
+    const q = query(collection(db, "rooms"));
     const roomes = onSnapshot(q, (snapshot) => {
       setRooms(
         snapshot.docs.map((doc) => ({
@@ -40,6 +42,7 @@ function Sidebar() {
       );
     });
 
+ 
     // getDocs(collection(db, "rooms")).then((snapshot) => {
     //   setRooms(
     //     snapshot.docs.map((doc) => ({
@@ -59,7 +62,7 @@ function Sidebar() {
     <div className="sidebar">
       {/* sidebar header  */}
       <div className="sidebar__header">
-        <Avatar />
+        <Avatar src={user?.photoURL} />
         <div className="sidebar__headerRight">
           <IconButton>
             <DonutLargeIcon />
